@@ -1,22 +1,17 @@
 "use client";
 
-import React from "react";
-
 import {
   Sheet,
   SheetClose,
   SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import Image from "next/image";
-import { MenuLink } from "./MenuLink";
-import Link from "next/link";
 import { sidebarLinks } from "@/constants";
-import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { Logo } from "./Logo";
 
 export const MobileNavbar = (props: MobileNavProps) => {
   const { user } = props;
@@ -33,20 +28,7 @@ export const MobileNavbar = (props: MobileNavProps) => {
             aria-label="Main"
             className="flex flex-col gap-4"
           >
-            <Link
-              href="/"
-              className="cursor-pointer flex  items-center gap-1 px-4"
-            >
-              <Image
-                width={34}
-                height={34}
-                alt="Horizon"
-                src="/icons/logo.svg"
-              />
-              <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
-                Horzion
-              </h1>
-            </Link>
+            <Logo />
             <div className="mobilenav-sheet">
               <SheetClose asChild>
                 <div className="flex h-full flex-col gap-6 pt-16 text-white">
